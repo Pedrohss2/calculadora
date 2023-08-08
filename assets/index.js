@@ -1,5 +1,5 @@
 (function () {
-    function criaCalculadroa() {
+    function criaCalculadora() {
         return {
             display: document.querySelector('.display'),
             
@@ -67,6 +67,6 @@
             },
         }
     }
-    const calc = criaCalculadroa().inicia();
+    const calc =  criaCalculadora().inicia();
     
 })();
