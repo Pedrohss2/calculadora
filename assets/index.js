@@ -76,6 +76,19 @@
     function Calculadora() {
         this.diplay = document.querySelector('.display');
     
+        this.inicia  = () => {
+            this.cliqueButton();
+            this.clickEnter();
+        };
+
+        this.clickEnter = () => {
+            this.diplay.addEventListener('keyup', e => {
+                if (e.keyCode === 13) {
+                    this.fazConta();
+                }
+            });
+        };
+
         this.cliqueButton = () => {
             document.addEventListener('click', event  => {
                 const el =  event.target;
@@ -91,10 +104,6 @@
         };
     
         this.btnAddDisplay = el => this.diplay.value += el.innerText;  
-    
-        this.inicia  = () => {
-            this.cliqueButton();
-        };
     
         this.fazConta = () => {
             let conta = this.diplay.value;
